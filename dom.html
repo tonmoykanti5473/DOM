@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        article{
+            border: 2px solid turquoise;
+            border-radius: 15px;
+            margin: 2px;
+            padding: 2px;
+        }
+        .special h3{
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h3>Exploring DOM</h3>
+            <article class="special">
+                <h3>article-1</h3>
+                <p class="author">author-1</p>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, nulla?</p>
+            </article>
+            <article class="special">
+                <h3>article-2</h3>
+                <p class="author">author-2</p>
+                <p class="description">Molestias ipsam, similique repellat minima cumque eius temporibus ipsa at?</p>
+            </article>
+            <article class="special">
+                <h3>article-3</h3>
+                <p class="author">author-3</p>
+                <p class="description">Qui aliquam ipsa ullam, temporibus officiis molestias atque eius consequuntur.</p>
+            </article>
+        </section>
+    </main>
+    <script>
+        document.body.style.backgroundColor = 'Grey'
+        // let first = document.getElementById('first')
+        // first.style.fontSize = '50px'
+        // first.style.backgroundColor = 'aquamarine'
+        // first.style.color = 'grey'
+        // let second = document.getElementById('second')
+        // second.style.color = 'blue'
+
+
+
+        // let authors = document.getElementsByClassName('author')
+        let authors = document.querySelectorAll('.special h3')
+        for(let i=0; i<authors.length; i++){
+            let element = authors[i]
+            // console.log(element.innerHTML)
+            element.innerHTML = 'lekhok - ' + (i+1)
+            element.setAttribute('title', 'All authors are boss')
+            element.style.backgroundColor= 'lightblue'
+            element.style.margin = '10px'
+            // console.log(element)
+        }
+        let titles = document.querySelector('h3')
+        titles.setAttribute('title', 'you are the real DOM')
+        
+    </script>
+</body>
+</html>

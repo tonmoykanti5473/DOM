@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        article{
+            border: 2px solid turquoise;
+            border-radius: 15px;
+            margin: 2px;
+            padding: 2px;
+        }
+        .special h3{
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h3>Exploring DOM</h3>
+            <article id="first-article" class="special">
+                <h3>article-1</h3>
+                <p class="author">author-1</p>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, nulla?</p>
+            </article>
+            <article class="special">
+                <h3>article-2</h3>
+                <p class="author">author-2</p>
+                <p class="description">Molestias ipsam, similique repellat minima cumque eius temporibus ipsa at?</p>
+            </article>
+            <article class="special">
+                <h3>article-3</h3>
+                <p class="author">author-3</p>
+                <p class="description">Qui aliquam ipsa ullam, temporibus officiis molestias atque eius consequuntur.</p>
+            </article>
+            <article>
+                <h3>Grocery list</h3>
+                <ul id="item">
+                    <li>Gift item -1</li>
+                    <li>Gift item -2</li>
+                    <li>Gift item -3</li>
+                    <li>Gift item -4</li>
+                    <li>Gift item -5</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    <script>
+        let articles = document.getElementById('first-article')
+        let newParagraph = document.createElement('p')
+        newParagraph.innerHTML = 'This is added element'
+        articles.appendChild(newParagraph)
+
+        // add gift
+        let items = document.getElementById('item')
+        let newItem = document.createElement('li')
+        newItem.innerHTML = 'Gift item -6'
+        items.appendChild(newItem)
+    </script>
+</body>
+</html>

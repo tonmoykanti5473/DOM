@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>MY LIST</h3>
+    <div id="container">
+        <ul id="myList">
+            <li id="first" class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Laborum, quasi voluptas!</li>
+            <li class="item">Vel, minima optio?</li>
+            <li class="item">Quasi, corporis alias.</li>
+            <li class="item">Ducimus, molestiae aspernatur.</li>
+        </ul>
+    </div>
+    <button id="addNew">Add new item</button>
+</body>
+<script>
+    let items = document.getElementsByClassName('item')
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        item.addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target)
+        })
+    }
+
+    document.getElementById('addNew').addEventListener('click', function(event){
+        let itemParent = document.getElementById('myList')
+        let newItem = document.createElement('li')
+        newItem.innerText = 'Brand new item' 
+        itemParent.appendChild(newItem)
+    })
+    // document.getElementById('first').addEventListener('click', function(){
+    //     document.body.style.backgroundColor = 'aquamarine'
+    //     console.log('I am the first one')
+    // })
+    document.getElementById('myList').addEventListener('click', function(event){
+        event.target.parentNode.removeChild(event.target)
+        // document.body.style.backgroundColor = 'aquamarine'
+        // console.log('fuck')
+        // event.stopPropagation()
+    })
+    // document.getElementById('container').addEventListener('click', function(){
+    //     // document.body.style.color = 'aquamarine'
+    //     console.log('i am ther parent id')
+    // })
+</script>
+</html>
